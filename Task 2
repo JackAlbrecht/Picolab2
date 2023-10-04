@@ -1,5 +1,12 @@
-1. The function and purpose of the pull-up resistor is to negate any noisy signal that can trigger a false positive even when you’re not pushing the button. The value of the button object is 1 when pressed because without pressing the button current cant flow from one side of the H to the other side of the H, meaning the value is 0 before the button is pushed.
+1. The function and purpose of the pull-up resistor is to negate any noisy signal that can trigger a false positive even when you’re not pushing the button. 
+The value of the button object is 1 when pressed because without pressing the button current cant flow from one side of the H to the other side of the H, 
+meaning the value is 0 before the button is pushed.
 
-2. PWM output basically means variable power output because it will change the speed of going on or off to create a higher or lower brightness due to the residual power left after turning off, and residual power left after turning on. Using PWM you can select any number between 0 and 2^16 to tell you the variable power to output to the selected pin using duty_u16. Python sends instructions to control the PWM signal parameters by freq which will change how fast the power is switched, and duty_u16 which will set the duty cycle which is a 16 bit integer meaning 2^16 as previously explained and this 16bit number will be 0-100%, 100% being full light at 2^16.
+2. PWM output basically means variable power output because it will change the speed of going on or off to create a higher or lower brightness due to 
+the residual power left after turning off, and residual power left after turning on. Using PWM you can select any number between 0 and 2^16 to tell you 
+the variable power to output to the selected pin using duty_u16. Python sends instructions to control the PWM signal parameters by freq which will change 
+how fast the power is switched, and duty_u16 which will set the duty cycle which is a 16 bit integer meaning 2^16 as previously explained and this 16bit number 
+will be 0-100%, 100% being full light at 2^16.
 
-3. The value that interval_mapping would return for an input of 300 is roughly 76800 because it is mapping 2^8 to 2^16. This would affect the overall operation of the circuit because the duty cycle loops after 2^16 and resets at 0, therefore the light would be much more dim than expected.
+3. The value that interval_mapping would return for an input of 300 is roughly 76800 because it is mapping 2^8 to 2^16. This would affect the overall 
+operation of the circuit because the duty cycle loops after 2^16 and resets at 0, therefore the light would be much more dim than expected.
